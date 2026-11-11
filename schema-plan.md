@@ -1,5 +1,7 @@
 # Database Schema Plan - Faelin Bookshop
 
+> **As-built note:** this was the Week 14 plan. The finished database in `db.js` uses camelCase names (`customerId`, `bookTitle`, `totalPrice`, `orderDate`, `createdAt`), a `status` default of `Pending` (values `Pending`, `Confirmed`, `Completed`, `Cancelled`), no `ON DELETE CASCADE` (the server refuses to delete a customer who still has orders, with a 409), and an extra `users` table for staff accounts. `phone` and `address` are `NOT NULL` and `email` is not `UNIQUE` on customers.
+
 ## Business Overview
 **Faelin** is an independent boutique bookstore and online reader community that curates fiction, poetry, and indie literature, offering readers seamless catalog browsing, personalized customer profiles, and book order reservations.
 

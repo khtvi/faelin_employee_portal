@@ -1,5 +1,7 @@
 # API Routes Plan - Faelin Bookshop
 
+> **As-built note:** this was the Week 14 plan. The finished API has no `/api` prefix (routes are `/customers`, `/orders`, ...), the status route is `GET /health`, there is no `PUT /customers/:id`, and extra routes were added for login, weather, reports, exchange rates and the store location. The real list of routes is in `api-docs.md`.
+
 This document outlines all planned RESTful API endpoints for the Faelin Bookshop system. It serves as our build checklist for Week 15 and beyond.
 
 ---

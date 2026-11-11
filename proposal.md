@@ -4,6 +4,8 @@
 **Student Project**: Faelin Bookshop  
 **Date**: October 2026  
 
+> **As-built note:** this proposal is the Week 14 plan. The finished system differs in names and routes (camelCase columns, no `/api` prefix, a `users` table, login, weather and more). See `schema-plan.md`, `routes-plan.md` and `api-docs.md` for the final design.
+
 ---
 
 ## 1. Business Idea & Description
