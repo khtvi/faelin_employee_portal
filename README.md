@@ -2,7 +2,7 @@
 
 A modern web management system for an independent boutique bookstore and reader community. Customers and visitors can browse books and reservation orders. Logged-in staff can create, update, and manage orders, while administrators have full deletion authority.
 
-**Live Demo**: [[https://faelin-bookshop.onrender.com](https://faelin-bookshop.onrender.com)(https://faelin-employee-portal.onrender.com/)  
+**Live Demo**: [[https://faelin-bookshop.onrender.com](https://faelin-bookshop.onrender.com)  
 *(Note: The initial load may require ~50 seconds if the free Render instance is waking from an idle state.)*
 
 ---
