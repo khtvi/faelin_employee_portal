@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Faelin Bookshop &mdash; Find Your Next Book</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- App Outer Canvas Container (Paper Haven / Faelin Aesthetic) -->
+  <div class="app-canvas-wrapper">
+    <div class="bookshop-surface">
+
+      <!-- =====================================================================
+           HEADER & NAVIGATION BAR (Paper Haven Style)
+           ===================================================================== -->
+      <nav class="bookstore-nav" aria-label="Bookstore Navigation">
+        <div class="nav-brand-wrap">
+          <a href="#" class="nav-brand">Faelin Bookshop</a>
+        </div>
+
+        <div class="nav-links-center">
+          <a href="#" class="nav-link active">Home</a>
+          <a href="#catalogSection" class="nav-link">Shop</a>
+          <a href="#recommendedSection" class="nav-link">Recommended</a>
+          <a href="#categorySection" class="nav-link">Categories</a>
+          <a href="#weatherSection" class="nav-link">Weather</a>
+          <a href="#sanctuarySection" class="nav-link">Sanctuary</a>
+          <a href="#listSection" class="nav-link nav-staff-link">Circulation Desk</a>
+        </div>
+
+        <div class="nav-right-controls">
+          <div class="nav-search-bar">
+            <span class="nav-search-icon" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </span>
+            <label for="catalogSearch" class="visually-hidden">Search books</label>
+            <input id="catalogSearch" type="search" placeholder="Search books by title, author...">
+          </div>
+
+          <div class="currency-selector-box" title="Display Currency">
+            <span class="currency-globe-icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" x2="22" y1="12" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            </span>
+            <label for="currencySelect" class="visually-hidden">Choose Currency</label>
+            <select id="currencySelect" class="currency-dropdown">
+              <option value="PHP">PHP (₱)</option>
+              <option value="USD">USD ($)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="GBP">GBP (£)</option>
+              <option value="JPY">JPY (¥)</option>
+            </select>
+          </div>
+
+          <div class="user-profile-badge">
+            <div class="avatar-circle" title="Reader Session">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <div class="user-info-text">
+              <p id="who">Guest Reader</p>
+              <button id="logoutBtn" type="button" class="btn-text-logout" hidden>Sign out</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Live ARIA Message Notification Banner -->
+      <p id="message" role="status" aria-live="polite"></p>
+
+      <!-- =====================================================================
+           HERO SECTION: "Find Your Next Book" + 3 ARCHED NICHES
+           ===================================================================== -->
+      <section class="hero-split-section">
+        <div class="hero-text-col">
+          <h1 class="hero-main-title">Find Your<br>Next Book</h1>
+          <p class="hero-description">Discover a world where every page brings a new adventure. At Faelin Bookshop, we
+            curate a diverse collection of books.</p>
+          <a href="#catalogSection" class="btn-explore">Explore Now &rarr;</a>
+        </div>
+
+        <div class="hero-arches-col">
+          <div class="arches-grid">
+            <!-- Arch 1: The Name of the Wind -->
+            <div class="arch-slot">
+              <div class="arch-backdrop"></div>
+              <div class="arch-book-card" role="button" tabindex="0" data-hero-book="0"
+                aria-label="View The Name of the Wind">
+                <div class="hero-book-jacket jacket-emerald">
+                  <div class="jacket-spine-crease"></div>
+                  <span class="hero-edition-tag">Bestseller</span>
+                  <div class="jacket-content">
+                    <h3 class="hero-jacket-title">The Name<br>of the Wind</h3>
+                    <p class="hero-jacket-author">Patrick Rothfuss</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Arch 2: Kafka on the Shore -->
+            <div class="arch-slot">
+              <div class="arch-backdrop"></div>
+              <div class="arch-book-card" role="button" tabindex="0" data-hero-book="1"
+                aria-label="View Kafka on the Shore">
+                <div class="hero-book-jacket jacket-sapphire">
+                  <div class="jacket-spine-crease"></div>
+                  <span class="hero-edition-tag">Acclaimed</span>
+                  <div class="jacket-content">
+                    <h3 class="hero-jacket-title">Kafka on<br>the Shore</h3>
+                    <p class="hero-jacket-author">Haruki Murakami</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Arch 3: The Shadow of the Wind -->
+            <div class="arch-slot">
+              <div class="arch-backdrop"></div>
+              <div class="arch-book-card" role="button" tabindex="0" data-hero-book="3"
+                aria-label="View The Shadow of the Wind">
+                <div class="hero-book-jacket jacket-crimson">
+                  <div class="jacket-spine-crease"></div>
+                  <span class="hero-edition-tag">Classic</span>
+                  <div class="jacket-content">
+                    <h3 class="hero-jacket-title">The Shadow<br>of the Wind</h3>
+                    <p class="hero-jacket-author">Carlos Ruiz Zafón</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Carousel Indicator Dots -->
+          <div class="hero-dots-row" aria-hidden="true">
+            <span class="hero-dot"></span>
+            <span class="hero-dot active"></span>
+            <span class="hero-dot"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           AUTHORS BAR: "Latest from [Author] >"
+           ===================================================================== -->
+      <section class="authors-strip-section" aria-label="Featured Authors">
+        <div class="author-chips-carousel">
+          <button type="button" class="author-chip-item" data-author="Patrick Rothfuss">
+            <span class="author-avatar av-green">PR</span>
+            <span class="author-chip-label">Latest from Patrick Rothfuss &rsaquo;</span>
+          </button>
+          <button type="button" class="author-chip-item" data-author="Haruki Murakami">
+            <span class="author-avatar av-blue">HM</span>
+            <span class="author-chip-label">Latest from Haruki Murakami &rsaquo;</span>
+          </button>
+          <button type="button" class="author-chip-item" data-author="Carlos Ruiz Zafón">
+            <span class="author-avatar av-red">CR</span>
+            <span class="author-chip-label">Latest from Carlos Ruiz Zafón &rsaquo;</span>
+          </button>
+          <button type="button" class="author-chip-item" data-author="Madeline Miller">
+            <span class="author-avatar av-amber">MM</span>
+            <span class="author-chip-label">Latest from Madeline Miller &rsaquo;</span>
+          </button>
+          <button type="button" class="author-chip-item" data-author="Donna Tartt">
+            <span class="author-avatar av-slate">DT</span>
+            <span class="author-chip-label">Latest from Donna Tartt &rsaquo;</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION: "Recommended For You" (Reference Card Structure)
+           ===================================================================== -->
+      <section id="recommendedSection" class="section-block" aria-labelledby="recTitle">
+        <div class="section-heading-row">
+          <h2 id="recTitle" class="clean-section-title">Recommended For You</h2>
+          <a href="#catalogSection" class="see-all-link">See all &rsaquo;</a>
+        </div>
+
+        <!-- 4 Reference-Style Book Cards (Cover on left, details on right) -->
+        <div class="recommended-cards-grid" id="featuredGrid">
+          <!-- Populated dynamically by app.js with the exact Paper Haven card structure -->
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SECTION: "Category" (Genre Filter Chips)
+           ===================================================================== -->
+      <section id="categorySection" class="section-block" aria-labelledby="catTitle">
+        <div class="section-heading-row">
+          <h2 id="catTitle" class="clean-section-title">Category</h2>
+          <button type="button" id="resetCategoryBtn" class="see-all-btn">See all &rsaquo;</button>
+        </div>
+
+        <div class="category-pills-row" role="tablist" aria-label="Book Categories">
+          <button class="cat-pill active" data-category="all" role="tab" aria-selected="true">All Categories
+            (32)</button>
+          <button class="cat-pill" data-category="fiction" role="tab" aria-selected="false">Literary Fiction
+            (5)</button>
+          <button class="cat-pill" data-category="fantasy" role="tab" aria-selected="false">Fantasy &amp; Magic
+            (6)</button>
+          <button class="cat-pill" data-category="scifi" role="tab" aria-selected="false">Science Fiction (7)</button>
+          <button class="cat-pill" data-category="gothic" role="tab" aria-selected="false">Gothic &amp; Mystery
+            (5)</button>
+          <button class="cat-pill" data-category="classics" role="tab" aria-selected="false">Classics &amp; Heritage
+            (5)</button>
+          <button class="cat-pill" data-category="poetry" role="tab" aria-selected="false">Poetry &amp; Essays
+            (4)</button>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           MAIN BOOKSTORE CATALOG (All 32 Books in Reference Card Layout)
+           ===================================================================== -->
+      <section id="catalogSection" class="section-block catalog-shelves-block" aria-labelledby="catalogTitle">
+        <div class="section-heading-row">
+          <div>
+            <h2 id="catalogTitle" class="clean-section-title">Explore Bookstore Catalog</h2>
+            <span id="catalogCountDisplay" class="catalog-live-count">Showing 32 bookstore editions</span>
+          </div>
+          <div class="catalog-header-actions">
+            <!-- Literary Quote Trigger -->
+            <button id="nextQuoteBtn" type="button" class="btn-literary-quote" title="Inspire reading">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 4 8 7 8Z" />
+                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 4 8 7 8Z" />
+              </svg>
+              Daily Passage
+            </button>
+          </div>
+        </div>
+
+        <!-- Daily Literary Passage Dropdown / Bar -->
+        <div class="literary-passage-banner" id="quoteBanner">
+          <blockquote id="dailyQuote">A reader lives a thousand lives before he dies. The man who never reads lives only
+            one.</blockquote>
+          <cite id="quoteAuthor">&mdash; George R.R. Martin</cite>
+        </div>
+
+        <!-- 32 Books Display Grid (Exact Paper Haven Card Architecture) -->
+        <div class="catalog-cards-grid" id="catalogGrid">
+          <!-- Rendered dynamically by app.js with the reference layout -->
+        </div>
+
+        <!-- Catalog Pagination Controls -->
+        <nav class="catalog-pagination-nav" id="catalogPagination" aria-label="Bookstore Catalog Pages">
+          <!-- Rendered dynamically by app.js: Previous, Page Numbers, Next -->
+        </nav>
+      </section>
+
+      <!-- =====================================================================
+           READING WEATHER & BOOK PAIRINGS
+           ===================================================================== -->
+      <section id="weatherSection" class="section-block weather-section-block" aria-labelledby="weatherTitle">
+        <div class="section-heading-row">
+          <h2 id="weatherTitle" class="clean-section-title">Today's Reading Weather</h2>
+          <span class="weather-subtag">Lucena &bull; Baguio &bull; Manila</span>
+        </div>
+
+        <div class="weather-card-container">
+          <form id="weatherForm" class="weather-input-form">
+            <label for="weatherCity">Location</label>
+            <div class="weather-input-group">
+              <input id="weatherCity" type="text" value="Lucena City" placeholder="e.g. Lucena City, Baguio, Manila"
+                required>
+              <button type="submit" class="btn-weather-check">Check Weather</button>
+            </div>
+          </form>
+
+          <div class="weather-result-display">
+            <p id="weatherResult" class="weather-temp-line" aria-live="polite">Loading weather...</p>
+            <div class="weather-pairing-box">
+              <span class="pairing-badge">Recommended Reading Mood</span>
+              <p id="weatherTip" class="weather-tip-body"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           READING SANCTUARY & STORE LOCATOR (OpenStreetMap API & Geospatial Metadata)
+           ===================================================================== -->
+      <section id="sanctuarySection" class="section-block sanctuary-section-block" aria-labelledby="sanctuaryTitle">
+        <div class="section-heading-row">
+          <div>
+            <h2 id="sanctuaryTitle" class="clean-section-title">Reading Sanctuary &amp; Store Locator</h2>
+            <p class="circulation-subtitle">Visit our physical bookstore nook nestled in the cool pines of Upper Session
+              Road, Baguio City.</p>
+          </div>
+          <div class="sanctuary-status-badge">
+            <span class="status-indicator-dot"></span>
+            <span>Open Today &bull; 9:00 AM &ndash; 8:00 PM</span>
+          </div>
+        </div>
+
+        <div class="sanctuary-grid-split">
+          <!-- Left: Store Information & Visiting Details -->
+          <div class="sanctuary-info-card">
+            <div class="sanctuary-meta-group">
+              <span class="sanctuary-meta-label">Location &amp; Address</span>
+              <h3 id="storeName" class="sanctuary-store-name">Faelin Bookshop &amp; Reading Sanctuary</h3>
+              <p id="storeAddress" class="sanctuary-store-address">Upper Session Road, Baguio City, 2600 Benguet,
+                Philippines</p>
+              <span id="storeCoordinates" class="sanctuary-coords">GPS: 16.4124&deg; N, 120.5975&deg; E</span>
+            </div>
+
+            <div class="sanctuary-meta-group">
+              <span class="sanctuary-meta-label">Visiting &amp; Reading Hours</span>
+              <ul class="sanctuary-hours-list">
+                <li><strong>Weekdays:</strong> <span id="storeWeekdays">9:00 AM &ndash; 8:00 PM</span></li>
+                <li><strong>Weekends:</strong> <span id="storeWeekends">8:30 AM &ndash; 9:00 PM</span></li>
+              </ul>
+            </div>
+
+            <div class="sanctuary-meta-group">
+              <span class="sanctuary-meta-label">Reader Amenities</span>
+              <div id="storeAmenities" class="sanctuary-amenities-tags">
+                <span class="amenity-tag">Quiet Reading Nooks</span>
+                <span class="amenity-tag">Artisan Tea &amp; Pour-Over Bar</span>
+                <span class="amenity-tag">Handcrafted Wooden Shelves</span>
+                <span class="amenity-tag">Reserved Study Tables</span>
+              </div>
+            </div>
+
+            <div class="sanctuary-actions-row">
+              <a id="storeOsmLink"
+                href="https://www.openstreetmap.org/?mlat=16.4124&amp;mlon=120.5975#map=17/16.4124/120.5975"
+                target="_blank" rel="noopener noreferrer" class="btn-sanctuary-directions">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+                </svg>
+                View Map &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Map Embed -->
+          <div class="sanctuary-map-wrapper">
+            <iframe id="storeMapIframe" class="sanctuary-map-frame" title="Faelin Bookshop Baguio Location Map"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=120.5930%2C16.4090%2C120.6020%2C16.4160&amp;layer=mapnik&amp;marker=16.4124%2C120.5975"
+              loading="lazy" aria-label="Interactive map showing Faelin Bookshop on Upper Session Road, Baguio City">
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           CIRCULATION DESK & RESERVATION REGISTRY (Preserved Handout Section)
+           ===================================================================== -->
+
+      <section id="listSection" class="section-block circulation-desk-block" aria-labelledby="listTitle">
+        <div class="section-heading-row">
+          <div>
+            <h2 id="listTitle" class="clean-section-title">Circulation Desk &amp; Reservation Registry</h2>
+            <p class="circulation-subtitle">Reader reservations log. Customers can verify active reservations; bookstore
+              staff sign in below to record or update orders.</p>
+          </div>
+          <div class="view-mode-toggles">
+            <button id="viewTableBtn" type="button" class="btn-view-toggle active" title="Table View">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="18" height="18" x="3" y="3" rx="2" />
+                <path d="M3 9h18M3 15h18M9 9v12" />
+              </svg>
+              Table View
+            </button>
+            <button id="viewCardsBtn" type="button" class="btn-view-toggle" title="Card View">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="7" height="7" x="3" y="3" rx="1" />
+                <rect width="7" height="7" x="14" y="3" rx="1" />
+                <rect width="7" height="7" x="14" y="14" rx="1" />
+                <rect width="7" height="7" x="3" y="14" rx="1" />
+              </svg>
+              Card View
+            </button>
+          </div>
+        </div>
+
+        <!-- Circulation Stats Bar -->
+        <div class="circ-summary-strip" aria-label="Circulation Registry Summary">
+          <div class="summary-stat-cell">
+            <span class="stat-num" id="kpiCatalogCount">32</span>
+            <span class="stat-label">Catalog Editions</span>
+          </div>
+          <div class="summary-stat-cell">
+            <span class="stat-num" id="kpiTotalOrders">8</span>
+            <span class="stat-label">Orders Logged</span>
+          </div>
+          <div class="summary-stat-cell">
+            <span class="stat-num" id="kpiActiveOrders">3</span>
+            <span class="stat-label">Pending Delivery</span>
+          </div>
+          <div class="summary-stat-cell">
+            <span class="stat-num" id="kpiCustomers">8</span>
+            <span class="stat-label">Registered Readers</span>
+          </div>
+        </div>
+
+        <!-- Controls: Status Filter and Live Search (Exact Handout IDs) -->
+        <div class="circ-controls-row">
+          <div class="control-box filter-box">
+            <label for="statusFilter">Filter by status</label>
+            <select id="statusFilter">
+              <option value="">All Statuses</option>
+              <option value="Pending">Pending</option>
+              <option value="Confirmed">Confirmed</option>
+              <option value="Completed">Completed</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+          </div>
+
+          <div class="control-box search-box">
+            <label for="search">Search Orders</label>
+            <div class="input-with-icon">
+              <span class="icon-wrap" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+              </span>
+              <input id="search" type="search" placeholder="Search orders by customer, book title, author, or genre...">
+            </div>
+          </div>
+        </div>
+
+        <!-- Table View Container -->
+        <div class="table-wrap" id="tableContainer">
+          <table>
+            <caption>All customer book orders</caption>
+            <thead>
+              <tr>
+                <th scope="col">Customer</th>
+                <th scope="col">Book Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Price</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+
+        <!-- Cards View Container -->
+        <div class="cards-wrap" id="cardsContainer" hidden>
+          <div class="order-tickets-grid" id="cardRows"></div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           STAFF CIRCULATION MANAGEMENT (Preserved Handout Forms)
+           ===================================================================== -->
+      <section id="staffSection" class="section-block staff-section-block">
+        <div class="staff-grid-split">
+          <!-- Staff Login Form (Exact Handout IDs) -->
+          <div id="loginSection" class="staff-panel-box" aria-labelledby="loginTitle">
+            <div class="panel-heading-row">
+              <h2 id="loginTitle" class="panel-title">Staff login</h2>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="7.5" cy="15.5" r="5.5" />
+                <path d="m21 2-9.6 9.6M15.5 7.5l3 3M18.5 4.5l3 3" />
+              </svg>
+            </div>
+            <p class="panel-desc-text">Sign in to unlock reservation updates, customer ordering, and status management.
+            </p>
+
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="loginEmail">Email address</label>
+                <input id="loginEmail" type="email" autocomplete="username" placeholder="staff@faelinbooks.com"
+                  required>
+              </div>
+
+              <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <input id="loginPassword" type="password" autocomplete="current-password" placeholder="••••••••"
+                  required>
+              </div>
+
+              <button type="submit" class="btn-primary-action">Sign In as Staff</button>
+            </form>
+
+            <details class="staff-register-toggle">
+              <summary>New apprentice? Register staff account</summary>
+              <form id="registerForm">
+                <div class="form-group">
+                  <label for="regName">Your full name</label>
+                  <input id="regName" type="text" autocomplete="name" placeholder="Elena Rostova" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="regEmail">Staff email address</label>
+                  <input id="regEmail" type="email" autocomplete="email" placeholder="elena@faelinbooks.com" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="regPassword">Password (at least 8 characters)</label>
+                  <input id="regPassword" type="password" minlength="8" autocomplete="new-password"
+                    placeholder="Minimum 8 characters" required>
+                </div>
+
+                <button type="submit" class="btn-secondary-action">Create Staff Account</button>
+              </form>
+            </details>
+          </div>
+
+          <!-- Add Order Form (Staff Only - Exact Handout IDs) -->
+          <div id="addSection" class="staff-panel-box" aria-labelledby="addTitle" hidden>
+            <div class="panel-heading-row">
+              <h2 id="addTitle" class="panel-title">Record a new book order</h2>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-0.5-5" />
+                <path d="M12 6v6M9 9h6" />
+              </svg>
+            </div>
+            <p class="panel-desc-text">Log an in-store customer reservation or delivery order.</p>
+
+            <form id="addForm">
+              <div class="form-group">
+                <label for="customerSelect">Customer</label>
+                <select id="customerSelect" required></select>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group flex-2">
+                  <label for="bookTitle">Book Title</label>
+                  <input id="bookTitle" type="text" placeholder="Select from catalog or type title" required>
+                </div>
+                <div class="form-group flex-1">
+                  <label for="genre">Genre / Category</label>
+                  <input id="genre" type="text" value="Fiction" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="author">Author</label>
+                <input id="author" type="text" placeholder="Author name" required>
+              </div>
+
+              <div class="form-row-3">
+                <div class="form-group">
+                  <label for="quantity">Quantity</label>
+                  <input id="quantity" type="number" min="1" value="1" required>
+                </div>
+                <div class="form-group">
+                  <label for="totalPrice">Total Price (₱)</label>
+                  <input id="totalPrice" type="number" step="0.01" min="0" value="650.00" required>
+                </div>
+                <div class="form-group">
+                  <label for="orderStatus">Initial Status</label>
+                  <select id="orderStatus">
+                    <option value="Pending">Pending</option>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Cancelled">Cancelled</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-primary-action">Place Customer Order</button>
+            </form>
+          </div>
+
+          <!-- Admin Roster Panel (Admins Only - Stretch Feature) -->
+          <div id="adminSection" class="staff-panel-box admin-panel-box" aria-labelledby="adminTitle" hidden>
+            <div class="panel-heading-row">
+              <h2 id="adminTitle" class="panel-title">Staff Roster</h2>
+              <span class="admin-badge">Admin Access</span>
+            </div>
+            <p class="panel-desc-text">Registered staff accounts with system access (secured via GET /auth/staff).</p>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Role</th>
+                  </tr>
+                </thead>
+                <tbody id="adminStaffRows"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           BOOK DETAIL PREVIEW MODAL
+           ===================================================================== -->
+      <dialog id="bookModal" class="book-detail-dialog" aria-labelledby="modalTitleDisplay">
+        <div class="modal-inner-card">
+          <button id="modalCloseBtn" type="button" class="btn-modal-close" aria-label="Close dialog">&times;</button>
+          <div class="modal-columns-layout">
+            <div class="modal-cover-column" id="modalCoverArt">
+              <div class="modal-spine-shadow"></div>
+              <span class="modal-cover-badge" id="modalBadge">Edition</span>
+              <div class="modal-cover-titles">
+                <h3 id="modalBookTitle" class="modal-cover-book-title">Title</h3>
+                <p id="modalBookAuthor" class="modal-cover-book-author">Author</p>
+              </div>
+            </div>
+
+            <div class="modal-info-column">
+              <span class="modal-genre-tag" id="modalGenre">Genre</span>
+              <h2 id="modalTitleDisplay" class="modal-main-title">Book Title</h2>
+              <p class="modal-author-lead">By : <span id="modalAuthorDisplay">Author</span></p>
+
+              <div class="modal-meta-bar">
+                <span>Rating: <strong id="modalRating">&starf; 4.9</strong></span>
+                <span>&bull;</span>
+                <span>Pages: <strong id="modalPages">350 pp</strong></span>
+                <span>&bull;</span>
+                <span>Year: <strong id="modalYear">2021</strong></span>
+              </div>
+
+              <p id="modalBlurb" class="modal-synopsis-text">Book synopsis...</p>
+
+              <div class="modal-footer-action-row">
+                <span class="modal-price-tag" id="modalPrice">₱650.00</span>
+                <button id="modalReserveBtn" type="button" class="btn-modal-reserve">Reserve This Copy</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      <!-- =====================================================================
+           FOOTER
+           ===================================================================== -->
+      <footer class="bookshop-clean-footer">
+        <div class="footer-grid">
+          <div class="footer-brand-col">
+            <span class="footer-logo">Faelin Bookshop</span>
+            <p class="footer-tagline">Curating timeless literature, independent imprints, and collectible translations.
+              A sanctuary for devoted readers.</p>
+          </div>
+          <div class="footer-hours-col">
+            <span class="footer-col-title">Store Hours</span>
+            <p>Monday &ndash; Sunday &bull; 9:00 AM &ndash; 8:00 PM</p>
+            <p>Session Road, Baguio City, Philippines</p>
+          </div>
+          <div class="footer-meta-col">
+            <span class="footer-col-title">Attribution &amp; Integrity</span>
+            <p>Weather data provided by <a href="https://www.weatherapi.com/" target="_blank"
+                rel="noopener noreferrer">WeatherAPI.com</a></p>
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /.bookshop-surface -->
+  </div><!-- /.app-canvas-wrapper -->
+
+  <script src="app.js"></script>
+</body>
+
+</html>
